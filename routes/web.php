@@ -25,3 +25,7 @@ Route::get('/managments/info/{id}', [Managments::class, 'info']);
 Route::get('/managments/edit/{id}', [Managments::class, 'edit']);
 Route::post('/managments/save_edit', [Managments::class, 'save_eidt']);
 Route::get('/managments/delete/{id}', [Managments::class, 'dele' ]);
+
+Route::get('/departments', [Departments::class, 'index']);
+Route::get('/departments/add', [Departments::class, 'add']);
+Route::post('/departments/save', [Departments::class, 'save']);
