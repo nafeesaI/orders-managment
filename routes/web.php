@@ -29,3 +29,23 @@ Route::get('/managments/delete/{id}', [Managments::class, 'dele' ]);
 Route::get('/departments', [Departments::class, 'index']);
 Route::get('/departments/add', [Departments::class, 'add']);
 Route::post('/departments/save', [Departments::class, 'save']);
+Route::get('/departments/info/{id}', [Departments::class, 'info']);
+Route::get('/departments/edit/{id}', [Departments::class, 'edit' ]);
+Route::post('/departments/update', [Departments::class, 'update']);
+Route::get('/departments/delete/{id}', [Departments::class, 'delete']);
+
+Route::get('/orderTypes', [OrderTypes::class, 'index']);
+Route::get('/OrderTypes/add', [OrderTypes::class, 'add']);
+Route::post('/OrderTypes/save', [OrderTypes::class, 'save']);
+
+Route::get('/employees', [Employees::class, 'index']);
+Route::get('/employees/add', [Employees::class, 'add']);
+Route::post('/employees/save', [Employees::class, 'save']);
+
+Route::get('/orders', [Orders::class, 'index']);
+Route::get('/orders/add', [Orders::class, 'add']);
+Route::post('/Orders/save', [Orders::class, 'save']);
+
+Route::get('/rejected', [RejectedOrders::class, 'index']);
+Route::get('/rejected/add', [RejectedOrders::class, 'add']);
+Route::post('/rejected/save', [RejectedOrders::class, 'save']);
