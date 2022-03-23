@@ -1,6 +1,4 @@
-@foreach ($departments as $dd)
-  <h3> {{$dd->name}} </h3>
-        @foreach ( $managments as $mana)
-         <h6> {{ $mana->name}} </h6>
-        @endforeach
-@endforeach
+
+  <h3> {{$dept->name}} </h3>
+         <h6 value="{{$dept->managment_id}}"> {{ $mana->name}} </h6>
+         

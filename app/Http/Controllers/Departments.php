@@ -32,25 +32,29 @@ class Departments extends Controller
     }
     public function info($id)
     {
-        return view('departments/info', [
-            'departments' => Department::find($id),
-            'managments' => Managment::get()
-        ]);
+        $mana = Managment::all();
+        $dept = Department::get();
+        $dept = Department::find($id);
+        return view('departments/info', compact('dept', 'mana'));
     }
     public function edit($id)
     {
         return view('departments/edit', [
-            'departments' => Department::find($id),
-            'mangments' => Managment::where('status', 1)->get()
+            'dept' => Department::find($id),
+            'mana' => Managment::where('status', 1)->get()
         ]);
     }
-    public function update(Request $req)
+    public function update(Request $req, $id)
     {
-        $dept = Department::find($req->input('id'));
-        $dept->name = $req->input('name');
-        $dept->managment_id = $req->input('managment_id');
+        $input = $req->all();
+        $dept = Department::find($id);
+        $dept->name = $input['name'];
+        $dept->managment_id = $input['managment_id'];
 
-        return ($dept->update());
+        $dept->name = $req['name'];
+        $dept->managment_id = $req['managment_id'];
+        $dept->save();
+        return redirect('/departments');
     }
     public function delete($id)
     {

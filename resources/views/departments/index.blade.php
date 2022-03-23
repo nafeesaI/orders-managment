@@ -14,9 +14,9 @@
          <td value="{{$mana->id}}"> {{ $mana->name}} </td>
       @endforeach
     
-     <td><a href="/departments/info/{id}">  <button type="button" class="dele fa fa-trash ">SHOW </button> </a></td>
-     <td><a href="/departments/edit/{id}">  <button type="button" class="dele fa fa-trash ">UPDATE </button></a> </td>
-     <td><a href="/deapatments/delete/{id}"><button type="button" class="dele fa fa-trash "> DELETE</button> </a></td>
+     <td><a href="/departments/info/{{$dept->id}}">  <button type="button" class="dele fa fa-trash ">SHOW </button> </a></td>
+     <td><a href="/departments/edit/{{$dept->id}}">  <button type="button" class="dele fa fa-trash ">UPDATE </button></a> </td>
+     <td><a href="/departments/delete/{{$dept->id}}"><button type="button" class="dele fa fa-trash "> DELETE</button> </a></td>
     
     </tr>
 

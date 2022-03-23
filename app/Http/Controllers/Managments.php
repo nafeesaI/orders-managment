@@ -39,9 +39,9 @@ class Managments extends Controller
 
     public function info($id)
     {
-        return view('/managments/info', [
-            'managment' => Managment::find($id)
-        ]);
+        $mana = Managment::get();
+        $mana = Managment::find($id);
+        return view('managments.info')->with('Managment', $mana);
     }
 
     public function edit($id)

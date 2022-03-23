@@ -1,18 +1,14 @@
 <div>
-    <form action="/departments/update" method="post">
+    <form action="/departments/update/{{$dept->id}}" method="post">
         @csrf
 
-        @foreach($departments as $dept)
-
         <select name="managment_id" >
-        @foreach ( $mangments as $mana)
+        @foreach ( $mana as $mana)
             <option value="{{ $mana->id}}"> {{ $mana->name}} </option>
         @endforeach
         </select>
 
-        <input type="text" name="name" >
+        <input type="text" name="name" value="{{$dept->name}}">
         <input type="submit" value="save" />
-        @endforeach
-
     </form>
 </div>

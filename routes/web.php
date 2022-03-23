@@ -31,12 +31,16 @@ Route::get('/departments/add', [Departments::class, 'add']);
 Route::post('/departments/save', [Departments::class, 'save']);
 Route::get('/departments/info/{id}', [Departments::class, 'info']);
 Route::get('/departments/edit/{id}', [Departments::class, 'edit' ]);
-Route::post('/departments/update', [Departments::class, 'update']);
+Route::post('/departments/update/{id}', [Departments::class, 'update']);
 Route::get('/departments/delete/{id}', [Departments::class, 'delete']);
 
 Route::get('/orderTypes', [OrderTypes::class, 'index']);
 Route::get('/OrderTypes/add', [OrderTypes::class, 'add']);
 Route::post('/OrderTypes/save', [OrderTypes::class, 'save']);
+Route::get('/OrderTypes/info/{id}', [OrderTypes::class, 'info']);
+Route::get('/OrderTypes/edit/{id}', [OrderTypes::class, 'edit' ]);
+Route::post('/OrderTypes/update/{id}', [OrderTypes::class, 'update']);
+Route::get('/OrderTypes/delete/{id}', [OrderTypes::class, 'delete']);
 
 Route::get('/employees', [Employees::class, 'index']);
 Route::get('/employees/add', [Employees::class, 'add']);
